@@ -1,0 +1,12 @@
+<div>
+  <h2>TRANS---APP</h2>
+
+  <%= render 'form' %>
+  <div>
+    <% @posts.each do |p| %>
+      <ul>
+        <li><%=p.name %></li>
+      </ul>
+    <% end %>
+  <div>
+</div>
