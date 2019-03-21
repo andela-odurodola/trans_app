@@ -16,9 +16,6 @@ class PostsController < ApplicationController
     @posts = Post.with_attached_post_files
   end
 
-  def show
-  end
-
   private
   def post_params
     params.require(:post).permit(post_files: [])
