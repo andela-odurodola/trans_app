@@ -1,7 +1,9 @@
 <div>
-  <ul>
-    <li></li>
-    <li></li>
-    <li></li>
-	</ul>
+  <% if @post.post_files.attached? %>
+    <ul>
+      <% @post.post_files.each do |post_file| %>
+        <li><% post_file.filename %></li>
+      <% end %>
+    </ul>
+  <% end %>
 </div>

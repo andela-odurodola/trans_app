@@ -1,4 +1,4 @@
-Class Post < ApplicationRecord
-  has_one_attached :post_file
+class Post < ApplicationRecord
+  has_many_attached :post_files
 end
 

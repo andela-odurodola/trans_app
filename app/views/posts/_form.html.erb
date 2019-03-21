@@ -1,7 +1,7 @@
 <%= form_for(:post, url: posts_path) do |f| %>
   <p>
-    <%= f.label :name, 'Select a file' %><br/>
-    <%= f.file_field :name, multiple: true%>
+    <%= f.label :post_files, 'Select a file' %><br/>
+    <%= f.file_field :post_files, multiple: true %>
   </p>
 
   <p><%= f.submit 'Upload File'%></p>
