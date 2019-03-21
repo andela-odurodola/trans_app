@@ -1,0 +1,18 @@
+<div>
+  <h2>TRANS---APP</h2>
+
+  <%= render 'form' %>
+  <div>
+    <% if @posts %>
+      <ul>
+        <% @posts.each do |post| %>
+          <% post.post_files.each do |post_file| %>
+            <li><%= post_file.filename%></li>
+          <% end %>
+        <% end %>
+      </ul>
+    <% else %>
+      <p>No files </p>
+    <% end %>
+  <div>
+</div>
