@@ -9,7 +9,7 @@ test:
 google:
   service: GCS
   project: trans-app
-  credentials: <%= ENV['GOOGLE_APPLICATION_CREDENTIALS'] %>
+  credentials: <%= Rails.application.credentials.gcs_trans_app.to_json %>
   bucket: trans-app
 
 google_dev:
