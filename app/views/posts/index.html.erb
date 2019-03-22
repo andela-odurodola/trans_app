@@ -1,0 +1,32 @@
+<h2 style="text-align:center">TRANS---APP</h2>
+<div class='home'>
+  <%= render 'form' %>
+</div>
+  <div style="overflow-x:auto;">
+    <table style="width:100%">
+      <tr>
+        <th>Filename</th>
+        <th>Size</th>
+        <th>Kind</th>
+        <th>Date Modified</th>
+        <th>Download</th>
+      </tr>
+      <% if @posts %>
+        <% @posts.each do |post| %>
+          <% post.post_files.each do |post_file| %>
+          <tr>
+            <td><%= post_file.filename %></td>
+            <td><%= number_to_human_size(post_file.byte_size) %></td>
+            <td><%= post_file.content_type%></td>
+            <td><%= (post_file.created_at).strftime('%Y-%m-%d %H:%M:%S') %></td>
+            <td><%= link_to("Download", rails_blob_path(post_file, disposition: "attachment") )%>
+            </td>
+          </tr>
+          <% end %>
+        <% end %>
+      <% else %>
+        <p>No files </p>
+      <% end %>
+    </table>
+  <div>
+

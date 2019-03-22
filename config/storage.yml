@@ -5,3 +5,15 @@ local:
 test:
   service: Disk
   root: <%= Rails.root.join("tmp/storage") %>
+
+google:
+  service: GCS
+  project: trans-app
+  credentials: <%= Rails.application.credentials.gcs_trans_app.to_json %>
+  bucket: trans-app
+
+google_dev:
+  service: GCS
+  project: trans-app
+  credentials: <%= Rails.root.join("config/secrets/trans-app.json") %>
+  bucket: trans-app
