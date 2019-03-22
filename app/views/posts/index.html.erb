@@ -18,7 +18,8 @@
           <td><%= number_to_human_size(post_file.byte_size) %></td>
           <td><%= post_file.content_type%></td>
           <td><%= (post_file.created_at).strftime('%Y-%m-%d %H:%M:%S') %></td>
-          <td><%= link_to 'Download', post_file, download: post_file %></td>
+          <td><a  href="<%= rails_blob_path(post_file, disposition: "attachment", only_path: true) %>">Download</a>
+          </td>
         </tr>
         <% end %>
       <% end %>
